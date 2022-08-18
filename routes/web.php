@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\IssueController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ImageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +22,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('issues', IssueController::class);
+Route::resource('categories', CategoryController::class);
+Route::resource('subcategories', SubcategoryController::class);
+Route::resource('comments', CommentController::class);
+Route::resource('imagesNew', ImageController::class);
+
